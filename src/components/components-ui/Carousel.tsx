@@ -11,7 +11,7 @@ import {
  
 export function CarouselPlugin() {
   const plugin = useRef(
-    Autoplay({ delay: 2000, Autoplay, stopOnInteraction: true })
+    Autoplay({ delay: 2000, stopOnInteraction: true })
   )
 
   const Links = [
