@@ -12,34 +12,25 @@ export function useProducts() {
         setProducts({ ...products, [name]: value });
     };
 
-    const handleImageUrlChange = (e) => {
-        const file = e.target.files[0];
-        setProducts({
-            ...products,
-            imageUrl: {
-                file,
-                name: file.name
-            }
-        });
-    };
 
     const sendProducts = useCallback(async (e) => {
         e.preventDefault();
-        //que aparezca despues de 1 segundo
         setTimeout(() => {
-            setLoading(true); // Aquí estableces el estado de loading como true antes de empezar el envío de productos
+            setLoading(true)
         }, 1000);
         const docRef = collection(db, "db-products");
         try {
-            const imageUrl = products.imageUrl;
-            const imageUrlLink = await uplodaImageToFirebaseStorage(imageUrl.file, imageUrl.name);
+            const image_one = products.image_one
+            const image_two= products.image_two
+            const imageUrlLinkOne = await uplodaImageToFirebaseStorage(image_one.file, image_one.name)
+            const imageUrlLinkTwo = await uplodaImageToFirebaseStorage(image_two.file, image_two.name)
             console.log('success');
-            const productData = { ...products, imageUrl: imageUrlLink }; // Reemplazar el objeto File con la URL
+            const productData = { ...products, image_one: imageUrlLinkOne, image_two: imageUrlLinkTwo }; // Reemplazar el objeto File con la URL
             await addDoc(docRef, productData);
         } catch (error) {
-            console.log('error', error);
+            console.log('error', error)
         } finally {
-            setLoading(false); // Aquí vuelves a establecer el estado de loading como false después de terminar el envío de productos
+            setLoading(false)
         }
     }, [products]);
     
@@ -48,7 +39,6 @@ export function useProducts() {
         products,
         setProducts,
         addProduct,
-        handleImageUrlChange,
         sendProducts,
         loading
     };

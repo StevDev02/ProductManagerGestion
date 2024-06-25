@@ -10,7 +10,7 @@ function UploadImageForTheProduct() {
         const file = e.target.files[0];
         setProducts({
             ...products,
-            image_one: {
+            image_two: {
                 file,
                 name: file.name
             }
@@ -29,19 +29,19 @@ function UploadImageForTheProduct() {
                         <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                     </div>
                     <input
-                    name="image_one"
+                    name="image_two"
                     id="dropzone-file" 
                     onChange={handleImageUrlChange}
                     type="file" className="hidden" />
                 </label>
-                    { products.image_one && <div className="flex items-center justify-center gap-10">
+                    { products.image_two && <div className="flex items-center justify-center gap-10">
                     <div className="w-[309px] relative items-center p-2 gap-2 rounded-lg flex border h-[67px] ">
                         <div className="w-[60px] h-[46px] border rounded-md ">
-                            <img className="container border rounded-md" src={products.image_one.url} alt="" />
+                            <img className="container border rounded-md" src={products.image_two.url} alt="" />
                         </div>
                         <div>
-                            <p className="text-base font-semibold" >{products.image_one.name}</p>
-                            <p className="text-sm text-[#0000009a]  " > {products.image_one.size}.KB</p>
+                            <p className="text-base font-semibold" >{products.image_two.name}</p>
+                            <p className="text-sm text-[#0000009a]  " > {products.image_two.size}.KB</p>
                         </div>
                         <Images className="absolute translate-x-[50%] right-6 " size={24} color="#787878" />
                     </div>
@@ -50,7 +50,7 @@ function UploadImageForTheProduct() {
         </>
      )
 }
-export function StepThree() {
+export function StepFour() {
     return ( 
         <>
             <section className="">
@@ -66,8 +66,8 @@ export function StepThree() {
                 </div>
                 <div className="absolute translate-y-[-50%] bottom-[5%] flex place-content-center gap-8">
                     <Link to={'/ec/product-manager/add-product'} className="border border-[#eee] transition-all duration-300 shadow-md hover:scale-110 rounded-md py-1 px-10">Regresar</Link>
-                    <Link to={'/ec/product-manager/get-started/step-2'} className="border border-[#eee] transition-all duration-300 shadow-md hover:scale-110 rounded-md py-1 px-10">Step 2</Link>
-                    <Link to={'/ec/product-manager/get-started/step-4'} className="border border-[#eee] transition-all duration-300 shadow-md hover:scale-110 rounded-md py-1 px-10">Step 4</Link>
+                    <Link to={'/ec/product-manager/get-started/step-3'} className="border border-[#eee] transition-all duration-300 shadow-md hover:scale-110 rounded-md py-1 px-10">Step 3</Link>
+                    <Link to={'/ec/product-manager/get-started/step-5'} className="border border-[#eee] transition-all duration-300 shadow-md hover:scale-110 rounded-md py-1 px-10">Step 5</Link>
                 </div>
             </section>
         </>

@@ -18,15 +18,14 @@ export function StepOne() {
                             <h2 className="text-black font-semibold text-base">Product Id</h2>
                             <p className="text-[#505052] text-sm ">A unique identifier is required for each product.</p>
                             <Input className="w-[318px] border border-red-300 h-[34px] " 
-                            name="productId"
-                            disabled type="email" placeholder="Id of the product" />
+                            disabled placeholder="Id of the product" />
                             <p className="text-xs text-red-300">The product ID will be generated automatically, due to <br /> security policies</p>
                         </div>
                         <div className="flex flex-col items-start justify-center gap-2">
                             <h2 className="text-black font-semibold text-base">Product Name</h2>
                             <p className="text-[#505052] text-sm ">We need each product to have its own name for when <br /> you want to place an order or manage it.</p>
                             <Input className="w-[318px] " 
-                            name="nombre"
+                            name="title"
                             onChange={(e) => addProduct(e)}
                             type="text" placeholder="Name of the product" />
                         </div>
@@ -35,35 +34,34 @@ export function StepOne() {
                         <div className="w-[358px]  flex flex-col p-4 items-start justify-center h-[170px] bg-white shadow-sm border rounded-lg">
                             <h2 className="text-[#505052] font-semibold text-base">Product Price</h2>
                             <div>
-                                <p className="font-medium text-4xl" >${products.precio ?? 0}.00</p>
+                                <p className="font-medium text-4xl" >${products.price ?? 0}.00</p>
                                 <p className="text-[#5050529a] text-[13px] ">The price varies depending on the product </p>
                             </div>
                             <input
-                            name="precio"
+                            name="price"
                             type="range" min="0" step="1" max="50" className="w-[300px] mt-4 border h-[7px] bg-[#d1d1d1] rounded-lg"
                             onChange={(e) => addProduct(e)}
-                            value={products.precio ?? 0}
+                            value={products.price ?? 0}
                             />
                         </div>
                         <div className="w-[358px]  flex flex-col p-4 items-start justify-center h-[170px] bg-white shadow-sm border rounded-lg">
                             <h2 className="text-[#505052] font-semibold text-base">Product Size</h2>
                             <div>
-                                <p className="font-medium text-4xl" >#{products.talla ?? 0}</p>
+                                <p className="font-medium text-xl" >Size of the product</p>
                                 <p className="text-[#5050529a] text-[13px] ">Upsizing the product is important </p>
                             </div>
-                            <input 
+                            <Input className="w-[318px] mt-4" 
                             name="talla"
-                            type="range" min="0" step="1" max="50" className="w-[300px] mt-4 border h-[7px] bg-[#d1d1d1] rounded-lg"
                             onChange={(e) => addProduct(e)}
-                            value={products.talla ?? 0}
-                            />
+                            type="text" placeholder="Size of the product" />
                         </div>
                     </div>
                 </div>
-
+                <div className="absolute translate-y-[-50%] bottom-[5%] flex place-content-center gap-8">
+                    <Link to={'/ec/product-manager/add-product'} className="border border-[#eee] transition-all duration-300 shadow-md hover:scale-110 rounded-md py-1 px-10">Regresar</Link>
+                    <Link to={'/ec/product-manager/get-started/step-2'} className="border border-[#eee] transition-all duration-300 shadow-md hover:scale-110 rounded-md py-1 px-10">Step 2</Link>
+                </div>
             </section>
-            <Link to={'/ec/product-manager/get-started/step-2'} className="absolute z-10 hover:border hover:border-[#00000033] hover:rounded-md top-[95%] left-[26%]  bg-transparent -translate-y-[50%] w-20 h-9 "></Link>
-            <Link to={'/ec/product-manager/get-started/step-2'} className="absolute z-10 hover:border hover:border-[#00000033] hover:rounded-md top-[95%] left-[15%]  bg-transparent -translate-y-[50%] w-9 h-9 "></Link>
         </>
      )
 }

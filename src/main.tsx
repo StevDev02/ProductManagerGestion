@@ -20,6 +20,8 @@ import { FinallySteps } from './components/pages/subpages/steps-add-products/Fin
 import { StepThree } from './components/pages/subpages/steps-add-products/StepThree.jsx';
 import { GetStaterded } from './components/pages/subpages/GetStaterded.tsx';
 import { StepTwo } from './components/pages/subpages/steps-add-products/StepTwo.jsx';
+import { StepFour } from './components/pages/subpages/steps-add-products/StepFour.jsx';
+import { StepFive } from './components/pages/subpages/steps-add-products/StepFive.jsx';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
           {
             path: "/ec/product-manager/get-started/step-3",
             element: <StepThree />,
+          },
+          {
+            path: "/ec/product-manager/get-started/step-4",
+            element: <StepFour />,
+          },
+          {
+            path: "/ec/product-manager/get-started/step-5",
+            element: <StepFive />,
           },
           {
             path: "/ec/product-manager/get-started/step-finally",

@@ -4,13 +4,13 @@ import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBwv8uZuvX-2O8Q-_25L4ZQnpCBFhl1W6w",
-  authDomain: "productmanagergestion-e0256.firebaseapp.com",
-  projectId: "productmanagergestion-e0256",
-  storageBucket: "productmanagergestion-e0256.appspot.com",
-  messagingSenderId: "337587949960",
-  appId: "1:337587949960:web:4dc6706267bf392610aa3d",
-  measurementId: "G-JMGJ9BPM72"
+  apiKey: "AIzaSyBNSlzjqnqKUZD47MLXC3fcyjF8VP-Lb6g",
+  authDomain: "product-controller-manager.firebaseapp.com",
+  projectId: "product-controller-manager",
+  storageBucket: "product-controller-manager.appspot.com",
+  messagingSenderId: "809154804599",
+  appId: "1:809154804599:web:3df1096c89890a0a54ff72",
+  measurementId: "G-2MSW5B2R3K"
 };
 
 // Initialize Firebase

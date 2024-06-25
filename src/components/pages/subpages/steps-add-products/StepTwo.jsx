@@ -40,19 +40,19 @@ export function StepTwo() {
                                 <p className="text-[#00000094] font-semibold text-base">Category</p>
                             </div>
                             <Input className="w-[318px] -mt-2 "
-                                name="categoria"
+                                name="category"
                                 onChange={(e) => addProduct(e)}
                                 type="text" placeholder="Enter a category" />
                         </div>
 
                         <div className="w-[358px] gap-3  flex flex-col p-4 items-start justify-center h-[170px] bg-white shadow-sm border rounded-lg">
-                            <h2 className="text-[#000000d2] font-semibold text-lg">Select a Sub-Category</h2>
+                            <h2 className="text-[#000000d2] font-semibold text-lg">Select a classify</h2>
                             <div>
-                                <p className="text-[#5050529a] text-[13px] ">Select the main product sub-category</p>
-                                <p className="text-[#00000094] font-semibold text-base">Sub-Category</p>
+                                <p className="text-[#5050529a] text-[13px] ">Select the main product classify</p>
+                                <p className="text-[#00000094] font-semibold text-base">classify: nuevo, popular, descuento</p>
                             </div>
                             <Input className="w-[318px] -mt-2 "
-                                name="subcategoria"
+                                name="clasificar"
                                 onChange={(e) => addProduct(e)}
                                 type="text" placeholder="Enter a category" />
                         </div>
@@ -64,9 +64,12 @@ export function StepTwo() {
                         <PickedColor addProduct={addProduct} products={products} />
                     </div>
                 </div>
+                <div className="absolute translate-y-[-50%] bottom-[5%] flex place-content-center gap-8">
+                    <Link to={'/ec/product-manager/add-product'} className="border border-[#eee] transition-all duration-300 shadow-md hover:scale-110 rounded-md py-1 px-10">Regresar</Link>
+                    <Link to={'/ec/product-manager/get-started/step-1'} className="border border-[#eee] transition-all duration-300 shadow-md hover:scale-110 rounded-md py-1 px-10">Step 1</Link>
+                    <Link to={'/ec/product-manager/get-started/step-3'} className="border border-[#eee] transition-all duration-300 shadow-md hover:scale-110 rounded-md py-1 px-10">Step 3</Link>
+                </div>
             </section>
-            <Link to={'/ec/product-manager/get-started/step-3'} className="absolute z-10 hover:border hover:border-[#00000033] hover:rounded-md top-[95%] left-[26%]  bg-transparent -translate-y-[50%] w-20 h-9 "></Link>
-            <Link to={'/ec/product-manager/get-started/step-3'} className="absolute z-10 hover:border hover:border-[#00000033] hover:rounded-md top-[95%] left-[18.5%]  bg-transparent -translate-y-[50%] w-9 h-9 "></Link>
         </>
     )
 }

@@ -4,15 +4,17 @@ export const ProductsContext = createContext()
 
 export function ProductsProvider({ children }) {
     const [products, setProducts] = useState({
-        nombre: "",
-        precio: 0,
-        talla: 0,
-        categoria: "",
-        subcategoria: "",
-        color: "",
-        imageUrl: "",
-        new: false,
-        popular: false
+        category: "", //Listo
+        clasificar: "", //Listo
+        color: "", //Listo
+        description: "", 
+        estilo: "",
+        image_one: "", //Listo
+        image_two: "", //Listo
+        price: 0, //Listo
+        talla: "", //Listo
+        tipo: "",
+        title: "", //Listo
     })
 
     return (
